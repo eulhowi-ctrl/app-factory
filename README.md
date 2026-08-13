@@ -23,6 +23,13 @@ docs/              ← Play 체크리스트, AdMob 셋업, 정책
 apps/              ← 앱별 폴더 (candidates.md, PRD.md, 소스) + _accounts.md(계정 장부)
 ```
 
+## 저장소 규칙 (단일 저장소)
+- **모든 앱은 이 저장소 하나에 누적**한다 — `apps/NNN-<이름>/` 로 매주 추가. 레포를 새로 만들지 않는다.
+- 폴더 번호는 `scripts/new_app.ps1`이 자동 부여 (001, 002, 003...).
+- 커밋은 공장 루트에서 `git add -A && git commit && git push`.
+- 사진·빌드물·서명키는 `.gitignore`로 제외되어 커밋되지 않는다.
+- 배포(스토어/Cloudflare)는 앱별로 별개 — 저장소와 무관.
+
 ## 필수 금지 3가지
 - 검수 통과 전 상장 ❌
 - 소재를 AI가 단독 결정 ❌
