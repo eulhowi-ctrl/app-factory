@@ -1,0 +1,17 @@
+# 의존성·빌드 산출물
+**/node_modules/
+**/dist/
+**/dev-dist/
+
+# 안드로이드 빌드 산출물 + 서명 키 (절대 커밋 금지)
+**/android/app/build/
+**/android/build/
+**/.gradle/
+**/*.keystore
+**/keystore.properties
+
+# 로그·환경
+*.log
+*.local
+.env
+.DS_Store
