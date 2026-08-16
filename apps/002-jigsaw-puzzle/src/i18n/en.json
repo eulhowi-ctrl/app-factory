@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "Jigsaw Puzzle"
+  },
+  "home": {
+    "chooseImage": "Choose an image",
+    "chooseDifficulty": "Choose difficulty",
+    "start": "Start Puzzle"
+  },
+  "difficulty": {
+    "easy": "Easy ({{count}} pieces)",
+    "normal": "Normal ({{count}} pieces)",
+    "hard": "Hard ({{count}} pieces)",
+    "expert": "Expert ({{count}} pieces)"
+  },
+  "image": {
+    "rockIsland": "Rock Island",
+    "puppiesGrass": "Puppies on Grass",
+    "forestRoad": "Forest Road"
+  },
+  "puzzle": {
+    "loading": "Loading...",
+    "back": "Back",
+    "completeTitle": "Complete!",
+    "completeBody": "You finished the {{pieces}}-piece puzzle in {{time}}!",
+    "confirm": "OK"
+  }
+}

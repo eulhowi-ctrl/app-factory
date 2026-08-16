@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "직소 퍼즐"
+  },
+  "home": {
+    "chooseImage": "이미지 선택",
+    "chooseDifficulty": "난이도 선택",
+    "start": "퍼즐 시작"
+  },
+  "difficulty": {
+    "easy": "쉬움 ({{count}}피스)",
+    "normal": "보통 ({{count}}피스)",
+    "hard": "어려움 ({{count}}피스)",
+    "expert": "전문가 ({{count}}피스)"
+  },
+  "image": {
+    "rockIsland": "바위섬",
+    "puppiesGrass": "잔디밭 강아지",
+    "forestRoad": "숲길"
+  },
+  "puzzle": {
+    "loading": "불러오는 중...",
+    "back": "뒤로",
+    "completeTitle": "완성!",
+    "completeBody": "{{pieces}}피스를 {{time}} 만에 완성했습니다!",
+    "confirm": "확인"
+  }
+}

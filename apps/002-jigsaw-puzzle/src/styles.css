@@ -1,0 +1,193 @@
+:root {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f1115;
+  color: #eee;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.75rem;
+  color: #aaa;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* --- 홈 화면 --- */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.image-card {
+  border: 3px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+  background: #1a1d24;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.image-card span {
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.image-card.selected {
+  border-color: #6366f1;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  border: 1px solid #444;
+  background: #1a1d24;
+  color: #ddd;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.chip.selected {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: white;
+}
+
+.primary-btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.start-btn {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.ghost-btn {
+  background: transparent;
+  color: #ddd;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+/* --- 퍼즐 화면 --- */
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #aaa;
+}
+
+.puzzle-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #0f1115;
+}
+
+.puzzle-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  padding-top: calc(0.75rem + env(safe-area-inset-top));
+  border-bottom: 1px solid #222;
+  z-index: 10;
+}
+
+.puzzle-status {
+  font-weight: 600;
+  color: #ddd;
+}
+
+.puzzle-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  touch-action: none;
+  background: #14161c;
+}
+
+.puzzle-world {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.puzzle-board-outline {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.complete-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.complete-card {
+  background: #1a1d24;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 320px;
+  text-align: center;
+}
+
+.complete-card h2 {
+  margin-top: 0;
+  color: #fff;
+}
