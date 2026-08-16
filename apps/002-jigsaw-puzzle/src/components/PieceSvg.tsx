@@ -34,6 +34,12 @@ export function PieceSvg({
 
   return (
     <div
+      data-piece-id={piece.id}
+      data-row={piece.layout.row}
+      data-col={piece.layout.col}
+      data-placed={piece.placed}
+      data-target-x={piece.layout.targetTopLeft.x}
+      data-target-y={piece.layout.targetTopLeft.y}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
