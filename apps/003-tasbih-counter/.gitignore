@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dev-dist/
+*.local
+*.log
+
+# 안드로이드 빌드 산출물 + 서명 키 (절대 커밋 금지)
+android/app/build/
+android/build/
+*.keystore
+keystore.properties

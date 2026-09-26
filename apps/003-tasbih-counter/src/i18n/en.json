@@ -1,0 +1,89 @@
+{
+  "app": { "name": "Tasbih Counter", "noAds": "No ads. No tracking. Your data stays on your device." },
+  "tab": { "counter": "Counter", "list": "Dhikr", "history": "History", "settings": "Settings" },
+  "counter": {
+    "tapHint": "Tap anywhere to count",
+    "undo": "−1",
+    "reset": "Hold to reset",
+    "resetConfirm": "Reset the current count? Your history is kept.",
+    "change": "Change",
+    "round": "Round {{n}}",
+    "lap": "Lap {{n}}",
+    "step": "Step {{n}} of {{total}}",
+    "complete": "Tasbih complete! May Allah accept it.",
+    "unlimited": "No limit",
+    "of": "of {{target}}"
+  },
+  "common": { "cancel": "Cancel", "ok": "OK", "save": "Save", "delete": "Delete", "edit": "Edit" },
+  "list": {
+    "presets": "Presets",
+    "custom": "My dhikr",
+    "add": "Add dhikr",
+    "limit": "Free version: up to {{n}} custom dhikr. Get Pro for unlimited.",
+    "target": "Target {{n}}",
+    "sequence": "33 · 33 · 34",
+    "empty": "No custom dhikr yet.",
+    "current": "Current"
+  },
+  "editor": {
+    "addTitle": "Add dhikr",
+    "editTitle": "Edit dhikr",
+    "name": "Name",
+    "arabic": "Arabic text (optional)",
+    "translit": "Transliteration (optional)",
+    "target": "Target per round (0 = no limit)",
+    "deleteConfirm": "Delete this dhikr? Its history is kept.",
+    "nameRequired": "Please enter a name."
+  },
+  "history": {
+    "today": "Today",
+    "streak": "Day streak",
+    "total": "All time",
+    "last30": "Last 30 days",
+    "byDhikr": "Totals by dhikr",
+    "empty": "No history yet. Start counting!"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "auto": "Device language",
+    "theme": "Appearance",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "vibrate": "Vibration",
+    "sound": "Click sound",
+    "keepAwake": "Keep screen on while counting",
+    "backup": "Backup & restore",
+    "export": "Export backup (JSON)",
+    "import": "Import backup",
+    "importConfirm": "Replace all current data with this backup?",
+    "importOk": "Backup restored.",
+    "importFail": "This file is not a valid Tasbih Counter backup.",
+    "csv": "Export history (CSV)",
+    "pro": "Pro",
+    "proDesc": "Unlimited custom dhikr, CSV export and color themes. One-time purchase. No ads, ever.",
+    "proTest": "Pro unlocked (test toggle — billing not connected yet)",
+    "proOnly": "Pro",
+    "accent": "Color theme",
+    "privacy": "Privacy policy",
+    "version": "Version {{v}}"
+  },
+  "onboard": {
+    "title": "Assalamu alaikum",
+    "body1": "Tap anywhere on the big area to count.",
+    "body2": "Hold the reset button to clear — no accidental resets.",
+    "body3": "Every tap is saved instantly on your device. No ads, ever.",
+    "start": "Start"
+  },
+  "meaning": {
+    "after-salah": "SubhanAllah 33 · Alhamdulillah 33 · Allahu Akbar 34",
+    "subhanallah": "Glory be to Allah",
+    "alhamdulillah": "All praise is due to Allah",
+    "allahuakbar": "Allah is the Greatest",
+    "lailahaillallah": "There is no god but Allah",
+    "astaghfirullah": "I seek forgiveness from Allah",
+    "subhanallahiwabihamdihi": "Glory be to Allah and praise be to Him",
+    "salawat": "O Allah, send blessings upon Muhammad"
+  }
+}

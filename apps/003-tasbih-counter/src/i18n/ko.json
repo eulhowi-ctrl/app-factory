@@ -1,0 +1,89 @@
+{
+  "app": { "name": "타스비 카운터", "noAds": "광고 없음. 추적 없음. 데이터는 기기에만 저장됩니다." },
+  "tab": { "counter": "카운터", "list": "지크르", "history": "기록", "settings": "설정" },
+  "counter": {
+    "tapHint": "아무 곳이나 탭해서 세기",
+    "undo": "−1",
+    "reset": "길게 눌러 초기화",
+    "resetConfirm": "현재 카운트를 초기화할까요? 기록은 유지됩니다.",
+    "change": "변경",
+    "round": "{{n}}회 완료",
+    "lap": "{{n}}바퀴",
+    "step": "{{total}}단계 중 {{n}}단계",
+    "complete": "타스비 완료!",
+    "unlimited": "무제한",
+    "of": "/ {{target}}"
+  },
+  "common": { "cancel": "취소", "ok": "확인", "save": "저장", "delete": "삭제", "edit": "편집" },
+  "list": {
+    "presets": "기본 지크르",
+    "custom": "내 지크르",
+    "add": "지크르 추가",
+    "limit": "무료 버전: 사용자 지크르 최대 {{n}}개. Pro는 무제한.",
+    "target": "목표 {{n}}",
+    "sequence": "33 · 33 · 34",
+    "empty": "아직 추가한 지크르가 없습니다.",
+    "current": "사용 중"
+  },
+  "editor": {
+    "addTitle": "지크르 추가",
+    "editTitle": "지크르 편집",
+    "name": "이름",
+    "arabic": "아랍어 원문 (선택)",
+    "translit": "음역 (선택)",
+    "target": "한 바퀴 목표 (0 = 무제한)",
+    "deleteConfirm": "이 지크르를 삭제할까요? 기록은 유지됩니다.",
+    "nameRequired": "이름을 입력하세요."
+  },
+  "history": {
+    "today": "오늘",
+    "streak": "연속일",
+    "total": "전체",
+    "last30": "최근 30일",
+    "byDhikr": "지크르별 합계",
+    "empty": "아직 기록이 없습니다. 시작해 보세요!"
+  },
+  "settings": {
+    "title": "설정",
+    "language": "언어",
+    "auto": "기기 언어",
+    "theme": "화면 모드",
+    "themeSystem": "시스템",
+    "themeLight": "라이트",
+    "themeDark": "다크",
+    "vibrate": "진동",
+    "sound": "클릭 소리",
+    "keepAwake": "세는 동안 화면 켜짐 유지",
+    "backup": "백업·복원",
+    "export": "백업 내보내기 (JSON)",
+    "import": "백업 가져오기",
+    "importConfirm": "현재 데이터를 모두 이 백업으로 바꿀까요?",
+    "importOk": "백업을 복원했습니다.",
+    "importFail": "올바른 타스비 카운터 백업 파일이 아닙니다.",
+    "csv": "기록 내보내기 (CSV)",
+    "pro": "Pro",
+    "proDesc": "사용자 지크르 무제한, CSV 내보내기, 색상 테마. 1회 결제. 광고는 영원히 없음.",
+    "proTest": "Pro 해금 (테스트 토글 — 결제 미연동)",
+    "proOnly": "Pro",
+    "accent": "색상 테마",
+    "privacy": "개인정보처리방침",
+    "version": "버전 {{v}}"
+  },
+  "onboard": {
+    "title": "앗살라무 알라이쿰",
+    "body1": "큰 영역 아무 곳이나 탭하면 셉니다.",
+    "body2": "초기화는 버튼을 길게 눌러야 해서 실수로 날아가지 않습니다.",
+    "body3": "탭할 때마다 기기에 즉시 저장됩니다. 광고는 영원히 없습니다.",
+    "start": "시작"
+  },
+  "meaning": {
+    "after-salah": "수브하날라 33 · 알함두릴라 33 · 알라후 아크바르 34",
+    "subhanallah": "알라께 영광을",
+    "alhamdulillah": "모든 찬미는 알라께",
+    "allahuakbar": "알라는 가장 위대하시다",
+    "lailahaillallah": "알라 외에 신은 없다",
+    "astaghfirullah": "알라께 용서를 구합니다",
+    "subhanallahiwabihamdihi": "알라께 영광과 찬미를",
+    "salawat": "알라여, 무함마드께 축복을"
+  }
+}

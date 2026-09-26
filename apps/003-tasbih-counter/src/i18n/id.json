@@ -1,0 +1,89 @@
+{
+  "app": { "name": "Tasbih Counter", "noAds": "Tanpa iklan. Tanpa pelacakan. Data tetap di perangkat Anda." },
+  "tab": { "counter": "Hitung", "list": "Zikir", "history": "Riwayat", "settings": "Pengaturan" },
+  "counter": {
+    "tapHint": "Ketuk di mana saja untuk menghitung",
+    "undo": "−1",
+    "reset": "Tahan untuk reset",
+    "resetConfirm": "Reset hitungan saat ini? Riwayat tetap tersimpan.",
+    "change": "Ganti",
+    "round": "Putaran {{n}}",
+    "lap": "Putaran {{n}}",
+    "step": "Tahap {{n}} dari {{total}}",
+    "complete": "Tasbih selesai! Semoga Allah menerimanya.",
+    "unlimited": "Tanpa batas",
+    "of": "dari {{target}}"
+  },
+  "common": { "cancel": "Batal", "ok": "OK", "save": "Simpan", "delete": "Hapus", "edit": "Ubah" },
+  "list": {
+    "presets": "Bawaan",
+    "custom": "Zikir saya",
+    "add": "Tambah zikir",
+    "limit": "Versi gratis: maksimal {{n}} zikir sendiri. Ambil Pro untuk tanpa batas.",
+    "target": "Target {{n}}",
+    "sequence": "33 · 33 · 34",
+    "empty": "Belum ada zikir sendiri.",
+    "current": "Sedang dipakai"
+  },
+  "editor": {
+    "addTitle": "Tambah zikir",
+    "editTitle": "Ubah zikir",
+    "name": "Nama",
+    "arabic": "Teks Arab (opsional)",
+    "translit": "Transliterasi (opsional)",
+    "target": "Target per putaran (0 = tanpa batas)",
+    "deleteConfirm": "Hapus zikir ini? Riwayatnya tetap tersimpan.",
+    "nameRequired": "Silakan isi nama."
+  },
+  "history": {
+    "today": "Hari ini",
+    "streak": "Hari berturut-turut",
+    "total": "Sepanjang waktu",
+    "last30": "30 hari terakhir",
+    "byDhikr": "Total per zikir",
+    "empty": "Belum ada riwayat. Mulai berzikir!"
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "language": "Bahasa",
+    "auto": "Bahasa perangkat",
+    "theme": "Tampilan",
+    "themeSystem": "Sistem",
+    "themeLight": "Terang",
+    "themeDark": "Gelap",
+    "vibrate": "Getar",
+    "sound": "Suara klik",
+    "keepAwake": "Layar tetap menyala saat menghitung",
+    "backup": "Cadangan & pemulihan",
+    "export": "Ekspor cadangan (JSON)",
+    "import": "Impor cadangan",
+    "importConfirm": "Ganti semua data saat ini dengan cadangan ini?",
+    "importOk": "Cadangan dipulihkan.",
+    "importFail": "File ini bukan cadangan Tasbih Counter yang valid.",
+    "csv": "Ekspor riwayat (CSV)",
+    "pro": "Pro",
+    "proDesc": "Zikir sendiri tanpa batas, ekspor CSV, dan tema warna. Sekali bayar. Tanpa iklan selamanya.",
+    "proTest": "Pro aktif (tombol uji — pembayaran belum terhubung)",
+    "proOnly": "Pro",
+    "accent": "Tema warna",
+    "privacy": "Kebijakan privasi",
+    "version": "Versi {{v}}"
+  },
+  "onboard": {
+    "title": "Assalamu'alaikum",
+    "body1": "Ketuk di mana saja pada area besar untuk menghitung.",
+    "body2": "Tahan tombol reset untuk menghapus — tidak ada reset tak sengaja.",
+    "body3": "Setiap ketukan langsung tersimpan di perangkat Anda. Tanpa iklan, selamanya.",
+    "start": "Mulai"
+  },
+  "meaning": {
+    "after-salah": "Subhanallah 33 · Alhamdulillah 33 · Allahu Akbar 34",
+    "subhanallah": "Maha Suci Allah",
+    "alhamdulillah": "Segala puji bagi Allah",
+    "allahuakbar": "Allah Maha Besar",
+    "lailahaillallah": "Tiada Tuhan selain Allah",
+    "astaghfirullah": "Aku memohon ampun kepada Allah",
+    "subhanallahiwabihamdihi": "Maha Suci Allah dan segala puji bagi-Nya",
+    "salawat": "Ya Allah, limpahkanlah rahmat kepada Muhammad"
+  }
+}

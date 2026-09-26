@@ -1,0 +1,306 @@
+/* Tasbih Counter — 순수 CSS. 색은 토큰으로만. 라이트/다크 + 액센트 4종(Pro). */
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --surface-2: #efede7;
+  --text: #1c1f1e;
+  --text-2: #5b615f;
+  --border: #dedbd3;
+  --danger: #b42318;
+  --accent: #0f7a63;
+  --accent-strong: #0b5c4b;
+  --accent-soft: #dcefe9;
+  --on-accent: #ffffff;
+  --shadow: 0 1px 2px rgb(0 0 0 / 6%), 0 4px 16px rgb(0 0 0 / 6%);
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Naskh Arabic', sans-serif;
+  line-height: 1.5;
+  color-scheme: light;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root[data-accent='blue'] { --accent: #2563eb; --accent-strong: #1d4ed8; --accent-soft: #dbe7fd; }
+:root[data-accent='purple'] { --accent: #7c3aed; --accent-strong: #6d28d9; --accent-soft: #ebe1fc; }
+:root[data-accent='gold'] { --accent: #a16207; --accent-strong: #854d0e; --accent-soft: #f6ead0; }
+
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #111413;
+    --surface: #1b1f1e;
+    --surface-2: #252a28;
+    --text: #eceeed;
+    --text-2: #a2aaa7;
+    --border: #2f3533;
+    --danger: #f97066;
+    --accent: #3fbf9f;
+    --accent-strong: #62d3b6;
+    --accent-soft: #173a32;
+    --on-accent: #0b1f1a;
+    --shadow: none;
+    color-scheme: dark;
+  }
+  :root:not([data-theme='light'])[data-accent='blue'] { --accent: #60a5fa; --accent-strong: #93c5fd; --accent-soft: #1b2b45; }
+  :root:not([data-theme='light'])[data-accent='purple'] { --accent: #a78bfa; --accent-strong: #c4b5fd; --accent-soft: #2c2346; }
+  :root:not([data-theme='light'])[data-accent='gold'] { --accent: #f0b429; --accent-strong: #f7cd6a; --accent-soft: #3a2f14; }
+}
+
+:root[data-theme='dark'] {
+  --bg: #111413;
+  --surface: #1b1f1e;
+  --surface-2: #252a28;
+  --text: #eceeed;
+  --text-2: #a2aaa7;
+  --border: #2f3533;
+  --danger: #f97066;
+  --accent: #3fbf9f;
+  --accent-strong: #62d3b6;
+  --accent-soft: #173a32;
+  --on-accent: #0b1f1a;
+  --shadow: none;
+  color-scheme: dark;
+}
+:root[data-theme='dark'][data-accent='blue'] { --accent: #60a5fa; --accent-strong: #93c5fd; --accent-soft: #1b2b45; }
+:root[data-theme='dark'][data-accent='purple'] { --accent: #a78bfa; --accent-strong: #c4b5fd; --accent-soft: #2c2346; }
+:root[data-theme='dark'][data-accent='gold'] { --accent: #f0b429; --accent-strong: #f7cd6a; --accent-soft: #3a2f14; }
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  overscroll-behavior: none;
+}
+
+button { font: inherit; color: inherit; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.45; }
+a { color: var(--accent-strong); }
+
+/* ── 레이아웃 ─────────────────────────────── */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.app-bar {
+  padding: calc(0.75rem + env(safe-area-inset-top)) 1rem 0.5rem;
+}
+.app-bar h1 { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--accent-strong); }
+
+.app-main { flex: 1; overflow-y: auto; display: flex; flex-direction: column; }
+
+.page { padding: 0.5rem 1rem 1.5rem; }
+
+.tabs {
+  display: flex;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0.5rem 0 0.45rem;
+  background: none;
+  border: 0;
+  color: var(--text-2);
+  font-size: 0.75rem;
+}
+.tab-icon { width: 24px; height: 24px; }
+.tab.active { color: var(--accent-strong); font-weight: 600; }
+
+/* ── 카운터 ─────────────────────────────── */
+.counter { flex: 1; display: flex; flex-direction: column; padding: 0 1rem 1rem; gap: 0.75rem; }
+
+.counter-head { text-align: center; min-height: 6.5rem; }
+.counter-arabic { font-size: 1.9rem; line-height: 1.6; font-family: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', serif; }
+.counter-title { font-weight: 700; font-size: 1.05rem; }
+.counter-meaning { color: var(--text-2); font-size: 0.9rem; }
+.counter-steps { display: flex; justify-content: center; gap: 6px; margin-top: 0.4rem; }
+.dot { width: 22px; height: 6px; border-radius: 3px; background: var(--border); }
+.dot.done { background: var(--accent-soft); }
+.dot.active { background: var(--accent); }
+
+.tap-area {
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+.tap-area:active { background: var(--surface-2); }
+.tap-area:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.ring { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -58%); }
+.ring-track { stroke: var(--surface-2); }
+.ring-fill { stroke: var(--accent); transition: stroke-dashoffset 120ms ease-out; }
+
+.tap-count {
+  position: relative;
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin-top: -1.5rem;
+}
+.tap-sub { position: relative; color: var(--text-2); font-size: 0.95rem; margin-top: 0.35rem; }
+.tap-badge {
+  position: absolute;
+  top: 0.9rem;
+  inset-inline-end: 0.9rem;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.tap-hint { position: absolute; bottom: 0.9rem; color: var(--text-2); font-size: 0.8rem; }
+.tap-flash {
+  position: absolute;
+  top: 0.9rem;
+  inset-inline-start: 0.9rem;
+  inset-inline-end: 5.5rem;
+  text-align: start;
+  color: var(--accent-strong);
+  font-weight: 700;
+  animation: flash 1.6s ease-out forwards;
+}
+@keyframes flash { 0% { opacity: 0; transform: translateY(4px); } 15% { opacity: 1; transform: none; } 80% { opacity: 1; } 100% { opacity: 0; } }
+
+.counter-actions { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 0.5rem; }
+
+/* ── 버튼 ─────────────────────────────── */
+.btn {
+  min-height: 48px;
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-weight: 600;
+}
+.btn:active:not(:disabled) { background: var(--surface-2); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-primary:active:not(:disabled) { background: var(--accent-strong); }
+.btn-danger { background: var(--danger); border-color: var(--danger); color: #fff; }
+.btn-danger-text { border-color: transparent; background: none; color: var(--danger); }
+.btn-block { width: 100%; }
+
+.btn-hold { position: relative; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; }
+.hold-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--danger);
+  opacity: 0.18;
+  transform: scaleX(0);
+}
+[dir='rtl'] .hold-fill { transform-origin: right; }
+[dir='ltr'] .hold-fill { transform-origin: left; }
+.btn-hold.pressing .hold-fill { transform: scaleX(1); transition: transform 700ms linear; }
+.hold-label { position: relative; font-size: 0.9rem; }
+
+.icon-btn { width: 48px; border: 0; background: none; color: var(--text-2); font-size: 1.1rem; }
+
+/* ── 목록 ─────────────────────────────── */
+.section-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-2); margin: 1.25rem 0 0.5rem; }
+.dhikr-list { list-style: none; margin: 0 0 0.75rem; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.dhikr-row { display: flex; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.dhikr-row.current { border-color: var(--accent); }
+.dhikr-main { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 1px; padding: 0.7rem 0.9rem; border: 0; background: none; text-align: start; }
+.dhikr-arabic { align-self: stretch; text-align: right; font-size: 1.25rem; font-family: 'Noto Naskh Arabic', 'Amiri', serif; }
+.dhikr-name { font-weight: 700; }
+.dhikr-meaning { color: var(--text-2); font-size: 0.85rem; }
+.dhikr-meta { display: flex; align-items: center; gap: 0.5rem; color: var(--text-2); font-size: 0.8rem; margin-top: 2px; }
+.chip { display: inline-block; background: var(--accent-soft); color: var(--accent-strong); border-radius: 999px; padding: 0 0.5rem; font-size: 0.72rem; font-weight: 700; vertical-align: middle; }
+
+/* ── 기록 ─────────────────────────────── */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.5rem; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 0.75rem 0.5rem; text-align: center; display: flex; flex-direction: column; }
+.stat-value { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat-label { font-size: 0.78rem; color: var(--text-2); }
+
+.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 0.75rem; }
+.chart-readout { font-variant-numeric: tabular-nums; margin-bottom: 0.4rem; }
+.chart { display: flex; align-items: flex-end; height: 120px; gap: 2px; direction: ltr; border-bottom: 1px solid var(--border); }
+.bar-hit { flex: 1; height: 100%; display: flex; align-items: flex-end; padding: 0; border: 0; background: none; }
+.bar { display: block; width: 100%; background: var(--accent); border-radius: 4px 4px 0 0; opacity: 0.55; }
+.bar-hit.active .bar { opacity: 1; }
+.chart-axis { display: flex; justify-content: space-between; margin-top: 0.3rem; direction: ltr; }
+
+.totals { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 16px; overflow: hidden; }
+.totals td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--border); }
+.totals tr:last-child td { border-bottom: 0; }
+.totals .num { text-align: end; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* ── 설정 ─────────────────────────────── */
+.banner { background: var(--accent-soft); color: var(--accent-strong); border-radius: 14px; padding: 0.7rem 0.9rem; font-weight: 600; font-size: 0.9rem; margin: 0.5rem 0 0; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 0.25rem 0.9rem; margin-top: 0.75rem; }
+.card.stack { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.9rem; }
+.card > .muted { margin: 0.75rem 0 0.25rem; }
+.setting-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 52px; border-bottom: 1px solid var(--border); }
+.setting-row:last-child { border-bottom: 0; }
+.setting-row select { font: inherit; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.4rem 0.5rem; max-width: 55%; }
+
+.switch { appearance: none; width: 46px; height: 28px; border-radius: 999px; background: var(--border); position: relative; flex-shrink: 0; cursor: pointer; transition: background 150ms; margin: 0; }
+.switch::after { content: ''; position: absolute; top: 3px; inset-inline-start: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; transition: inset-inline-start 150ms; }
+.switch:checked { background: var(--accent); }
+.switch:checked::after { inset-inline-start: 21px; }
+.switch:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.swatches { display: flex; gap: 0.5rem; }
+.swatch { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--border); padding: 0; }
+.swatch.selected { box-shadow: 0 0 0 2px var(--text); }
+.swatch.accent-green { background: #0f7a63; }
+.swatch.accent-blue { background: #2563eb; }
+.swatch.accent-purple { background: #7c3aed; }
+.swatch.accent-gold { background: #a16207; }
+
+/* ── 모달 ─────────────────────────────── */
+.modal-backdrop { position: fixed; inset: 0; background: rgb(0 0 0 / 45%); display: flex; align-items: flex-end; justify-content: center; z-index: 10; padding: 1rem; }
+.modal { width: 100%; max-width: 480px; background: var(--surface); border-radius: 20px; padding: 1.25rem; padding-bottom: calc(1.25rem + env(safe-area-inset-bottom)); max-height: 90vh; overflow-y: auto; }
+@media (min-width: 600px) { .modal-backdrop { align-items: center; } }
+.modal-title { margin: 0 0 0.75rem; font-size: 1.15rem; }
+.modal-message { margin: 0 0 1rem; }
+.modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; }
+.spacer { flex: 1; }
+
+.field { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--text-2); }
+.field input { font: inherit; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.6rem 0.7rem; }
+.field input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.field-error { color: var(--danger); }
+
+.onboard { margin: 0; padding-inline-start: 0; list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* ── 유틸 ─────────────────────────────── */
+.muted { color: var(--text-2); }
+.small { font-size: 0.82rem; }
+.center { text-align: center; }
+
+@media (max-height: 640px) {
+  .counter-arabic { font-size: 1.5rem; }
+  .tap-area { min-height: 240px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring-fill, .btn-hold.pressing .hold-fill, .switch, .switch::after { transition: none; }
+  .tap-flash { animation: none; }
+}

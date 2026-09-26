@@ -1,0 +1,89 @@
+{
+  "app": { "name": "Tesbih Sayacı", "noAds": "Reklam yok. Takip yok. Verileriniz cihazınızda kalır." },
+  "tab": { "counter": "Sayaç", "list": "Zikirler", "history": "Geçmiş", "settings": "Ayarlar" },
+  "counter": {
+    "tapHint": "Saymak için herhangi bir yere dokunun",
+    "undo": "−1",
+    "reset": "Sıfırlamak için basılı tutun",
+    "resetConfirm": "Mevcut sayı sıfırlansın mı? Geçmişiniz korunur.",
+    "change": "Değiştir",
+    "round": "Tur {{n}}",
+    "lap": "Tur {{n}}",
+    "step": "Adım {{n}} / {{total}}",
+    "complete": "Tesbih tamamlandı! Allah kabul etsin.",
+    "unlimited": "Sınırsız",
+    "of": "/ {{target}}"
+  },
+  "common": { "cancel": "İptal", "ok": "Tamam", "save": "Kaydet", "delete": "Sil", "edit": "Düzenle" },
+  "list": {
+    "presets": "Hazır zikirler",
+    "custom": "Zikirlerim",
+    "add": "Zikir ekle",
+    "limit": "Ücretsiz sürüm: en fazla {{n}} özel zikir. Sınırsız için Pro'ya geçin.",
+    "target": "Hedef {{n}}",
+    "sequence": "33 · 33 · 34",
+    "empty": "Henüz özel zikir yok.",
+    "current": "Şu anki"
+  },
+  "editor": {
+    "addTitle": "Zikir ekle",
+    "editTitle": "Zikri düzenle",
+    "name": "Ad",
+    "arabic": "Arapça metin (isteğe bağlı)",
+    "translit": "Okunuş (isteğe bağlı)",
+    "target": "Tur başına hedef (0 = sınırsız)",
+    "deleteConfirm": "Bu zikir silinsin mi? Geçmişi korunur.",
+    "nameRequired": "Lütfen bir ad girin."
+  },
+  "history": {
+    "today": "Bugün",
+    "streak": "Günlük seri",
+    "total": "Tüm zamanlar",
+    "last30": "Son 30 gün",
+    "byDhikr": "Zikre göre toplam",
+    "empty": "Henüz geçmiş yok. Zikre başlayın!"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "language": "Dil",
+    "auto": "Cihaz dili",
+    "theme": "Görünüm",
+    "themeSystem": "Sistem",
+    "themeLight": "Açık",
+    "themeDark": "Koyu",
+    "vibrate": "Titreşim",
+    "sound": "Tıklama sesi",
+    "keepAwake": "Sayarken ekranı açık tut",
+    "backup": "Yedekleme ve geri yükleme",
+    "export": "Yedeği dışa aktar (JSON)",
+    "import": "Yedeği içe aktar",
+    "importConfirm": "Tüm mevcut veriler bu yedekle değiştirilsin mi?",
+    "importOk": "Yedek geri yüklendi.",
+    "importFail": "Bu dosya geçerli bir Tesbih Sayacı yedeği değil.",
+    "csv": "Geçmişi dışa aktar (CSV)",
+    "pro": "Pro",
+    "proDesc": "Sınırsız özel zikir, CSV dışa aktarma ve renk temaları. Tek seferlik ödeme. Asla reklam yok.",
+    "proTest": "Pro açık (test anahtarı — ödeme henüz bağlı değil)",
+    "proOnly": "Pro",
+    "accent": "Renk teması",
+    "privacy": "Gizlilik politikası",
+    "version": "Sürüm {{v}}"
+  },
+  "onboard": {
+    "title": "Esselamu aleyküm",
+    "body1": "Saymak için büyük alanda herhangi bir yere dokunun.",
+    "body2": "Sıfırlamak için düğmeyi basılı tutun — yanlışlıkla sıfırlama olmaz.",
+    "body3": "Her dokunuş anında cihazınıza kaydedilir. Asla reklam yok.",
+    "start": "Başla"
+  },
+  "meaning": {
+    "after-salah": "Sübhanallah 33 · Elhamdülillah 33 · Allahu Ekber 34",
+    "subhanallah": "Allah'ı tüm noksanlıklardan tenzih ederim",
+    "alhamdulillah": "Hamd Allah'a mahsustur",
+    "allahuakbar": "Allah en büyüktür",
+    "lailahaillallah": "Allah'tan başka ilah yoktur",
+    "astaghfirullah": "Allah'tan bağışlanma dilerim",
+    "subhanallahiwabihamdihi": "Allah'ı hamd ile tesbih ederim",
+    "salawat": "Allah'ım, Muhammed'e salât eyle"
+  }
+}
