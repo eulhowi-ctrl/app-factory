@@ -1,9 +1,18 @@
 # PROGRESS — Symptomly (시범 앱 #1, 기존명: Symptom Diary)
 
-> 업데이트: 2026-08-10. **다음 세션은 이 파일을 먼저 읽는다.**
+> 업데이트: 2026-09-30. **다음 세션은 이 파일을 먼저 읽는다.**
 
 ## 현재 단계
-스테이지 2(코딩) 완료 → **스테이지 3(검수) 진행 중** — 인간 검수 게이트 통과 전 상장 금지.
+스테이지 3(검수) 통과 완료 → **스테이지 4(상장) 진행 중**. Play Console 결제($25) 완료.
+다음 세션 첫 할 일: 아래 "2026-09-30 세션" 항목의 미완료 액션부터 이어서 진행.
+
+## 2026-09-30 세션 (약 1.5개월 공백 후 재개)
+- [x] 로컬(Windows)에 저장소 재클론: `C:\Users\wieul\projects\app-factory`
+- [x] `npm install` + `npm run build` 성공 확인 (vite 7.3.6, `dist/` 생성됨) — 웹 빌드는 문제 없음
+- [x] 로컬 환경 점검: JDK 17 설치는 되어 있으나(`JAVA_HOME` 세팅됨) PATH 미등록 상태, `ANDROID_HOME` 없음, Android SDK 로컬 미설치 → 안드로이드 빌드 전 PATH 등록 + SDK 설치 필요
+- [ ] **다음 즉시 할 일**: `npx wrangler login` (브라우저 인증) → 미완료. 완료되면 `deploy_cloudflare.ps1`로 배포해 `privacy.html` URL 확보
+- [ ] Play Console에서 앱 엔트리 생성(이름 Symptomly/영어/앱/무료) — 아직 미수행
+- 테스터 모집 전략 논의 완료: Play 클로즈드테스트 12명×14일 요건은 실사용자가 아니라 **개발자 품앗이(교환) 커뮤니티**(Reddit r/androiddev, r/AndroidAppsPromo, Discord/Telegram "20 testers exchange" 그룹) + 지인 동원으로 채우는 게 표준 관행. 가짜 계정/봇은 계정 정지 위험 있어 금지. 실타겟 커뮤니티(r/ChronicIllness 등)는 상장 후 실사용자 유입용으로 아껴둘 것.
 
 ## 방향 확정 (2026-08-11)
 **시범 목적 그대로 출시.** 성공 기준 = 파이프라인 검증 + Play 검수 경험 + 30일 지표. 인기는 목표 아님.
@@ -39,12 +48,15 @@
 
 - [x] **사진 아카이브 (A·B·C)**: ① 사진을 IndexedDB로 이전(localStorage 5MB 한계 해결, 기존 사진 자동 마이그레이션) ② 보관함 탭 + 전체화면 뷰어(Lightbox) ③ 과거 기록 CSV 일괄 업로드. i18n +5키 → 150개/16개 언어
 
-## 스테이지 4(상장) — 준비 완료, 내일 이어서
+## 스테이지 4(상장) — 진행 중
 - [x] `docs/PUBLISH_CHECKLIST.md` 작성, `docs/PLAY_LISTING.md`·`blog-intro.md` 준비
-- [ ] Cloudflare 계정 + wrangler login → 웹 배포
-- [ ] JDK 17 + Android Studio/SDK 설치 → AAB 빌드
-- [ ] Play Console $25 + 상장 (12명×14일 클로즈드)
-- [ ] AdMob·도메인
+- [x] Play Console 계정 개설 + $25 결제 (2026-09-30 이전, 사용자 확인)
+- [x] 웹 빌드 성공 확인 (2026-09-30, 로컬)
+- [ ] Cloudflare wrangler login (브라우저 인증) → 웹 배포 → privacy.html URL 확보 ← **다음 세션 시작점**
+- [ ] Play Console 앱 엔트리 생성
+- [ ] JDK PATH 등록 + Android SDK 설치 → `npx cap add android` → 키스토어 생성(이중 백업 필수) → AAB 빌드
+- [ ] 클로즈드 테스트 12명×14일 (opt-in 링크는 AAB를 트랙에 업로드해야 생성됨)
+- [ ] AdMob·도메인 (선택)
 
 ## 검수 (스테이지 3) — ✅ 통과 (2026-08-12)
 - [x] F1 증상 기록 / F2 약물 기록 / F3 타임라인 / F4 CSV·PDF / F5 프리미엄+월별트렌드+그래프
@@ -57,9 +69,10 @@
 3. 계정 개설: Play Console $25 / AdMob / Cloudflare / 도메인 (`../_accounts.md`에 체크)
 
 ## 미해결
-- 브라우저 검수 결과 (사용자 대기)
-- 안드로이드 빌드 도구 미설치 (JDK 17, Android SDK)
-- Play/AdMob/Cloudflare 계정 미개설
+- Cloudflare wrangler 브라우저 인증 미완료
+- 안드로이드 빌드 도구 로컬 미설치 (JDK는 설치돼있으나 PATH 미등록, Android SDK 없음)
+- Play Console 앱 엔트리 아직 미생성
+- AdMob/Cloudflare/도메인 계정 미개설 (Play Console만 완료)
 
 ## 실행 환경
 - 개발 서버: 앱 폴더에서 `npm run dev` → `http://localhost:5173/`
