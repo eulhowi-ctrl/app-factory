@@ -6,7 +6,7 @@
 
 | 항목 | 상태 | 개설일/만료 | 비고 |
 |---|---|---|---|
-| Google Play Console ($25 1회) | ☑ | 2026-09-30 이전 | apps의 앱 등록에 필요 |
+| Google Play Console ($25 1회) | ☑ (결제) / 🔴 본인인증 미완료 | 2026-09-30 이전 | 인증 끝나야 앱 생성 가능 (2026-09-30 확인) |
 | AdMob | ☐ | | 광고 수익. 첫날 개설 권장 |
 | Cloudflare (Workers 정적 자산) | ☑ | 2026-08-14 이전 | eulhowi@gmail.com. symptomly → https://symptomly.symptomly.workers.dev |
 | 도메인 | ☐ | | ~$11/년, 커스텀 도메인 |

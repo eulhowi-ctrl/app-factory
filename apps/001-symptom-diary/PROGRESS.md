@@ -1,10 +1,28 @@
 # PROGRESS — Symptomly (시범 앱 #1, 기존명: Symptom Diary)
 
-> 업데이트: 2026-09-30. **다음 세션은 이 파일을 먼저 읽는다.**
+> 업데이트: 2026-10-01. **다음 세션은 이 파일을 먼저 읽는다.**
 
 ## 현재 단계
-스테이지 3(검수) 통과 완료 → **스테이지 4(상장) 진행 중**. Play Console 결제($25) 완료.
-다음 세션 첫 할 일: 아래 "2026-09-30 세션" 항목의 미완료 액션부터 이어서 진행.
+스테이지 3(검수) 통과 → **스테이지 4(상장) 진행 중, 지금은 🔴 차단됨**.
+**차단 사유: Play Console 개발자(개인) 본인인증 미완료** → 인증이 끝나야 '앱 만들기'부터 진행 가능. (2026-09-30 사용자 확인)
+다음 세션 첫 할 일: ① 사용자가 본인인증 완료 여부 알려줌 → ② 아래 "Play Console 앱 엔트리 입력값"으로 앱 생성 → ③ 키스토어·AAB.
+인증 대기 중에도 가능한 일(차단 안 받음): 키스토어 생성·백업, AAB 빌드, 스크린샷·피처 그래픽 제작, 클로즈드 테스트 모집 글 준비.
+
+## 2026-09-30 세션 요약 (Cloudflare 배포 + Android 환경 + 상장 준비)
+- Cloudflare: wrangler 로그인(eulhowi@gmail.com) → 기존 Worker `symptomly`(8/14 옛 빌드, 같은 앱) 확인 후 최신 빌드로 갱신. 웹 https://symptomly.symptomly.workers.dev
+- 사고: `wrangler pages deploy`(신형 4.144)가 package.json·vite.config.ts·package-lock·.gitignore를 자동 수정 → 전부 원복. 공장 스크립트 `deploy_cloudflare.ps1`을 Workers 방식(`-WorkerName`)으로 교체·검증
+- 개인정보처리방침에 연락처 eulhowi@gmail.com 추가
+- Android: JDK21·SDK·Gradle을 E:\android에 설치(C: 여유 1.4GB), 환경변수 등록, `cap add android`, `assembleDebug` 성공(8.3MB)
+- 커밋 `bde3742` 푸시 완료 (GitHub eulhowi-ctrl/app-factory, main)
+- 결과: Play Console 앱 만들기 단계에서 **개발자 본인인증 미완료로 중단** → 다음 세션에서 재개
+
+## Play Console 앱 엔트리 입력값 (인증 완료 후 그대로 사용)
+- 앱 이름 `Symptomly` / 기본 언어 English (United States) / **앱** / **무료**(유료 전환 불가) / 정책·수출법 선언 체크
+- 개인정보처리방침 URL: `https://symptomly.symptomly.workers.dev/privacy.html`
+- 앱 액세스: 로그인 없음·전 기능 사용 가능 / 타겟층: 만 18세 이상 권장(아동용 제외) / 콘텐츠 등급: 설문 전부 '아니요'
+- 데이터 보안: 수집·공유 없음(기기 내 저장만) / 건강 앱 선언: 진단 아님·기록용
+- 광고 선언: 광고 켤지에 따라 다름 — **미결정**
+- 설명 문구: `docs/PLAY_LISTING.md`
 
 ## 2026-09-30 세션 (약 1.5개월 공백 후 재개)
 - [x] 로컬(Windows)에 저장소 재클론: `C:\Users\wieul\projects\app-factory`
@@ -56,8 +74,8 @@
   - 웹: https://symptomly.symptomly.workers.dev
   - **개인정보처리방침 URL(Play용): https://symptomly.symptomly.workers.dev/privacy.html** (→ /privacy 로 리다이렉트 후 200)
   - 배포 방식은 Pages가 아니라 Workers(`wrangler.jsonc`). `deploy_cloudflare.ps1`(Pages)은 이 앱에 안 맞음 — `wrangler pages deploy`가 프로젝트 파일을 자동 수정하니 쓰지 말 것. 재배포: `npm run build && npx wrangler deploy`
-- [ ] **다음 세션 시작점: Play Console 앱 엔트리 생성**
-- [x] 로컬 Android 환경 구축 (2026-09-30): C: 여유 1.4GB뿐이라 전부 **E:ndroid**에 설치 — JDK 21(Temurin), SDK(platform 35·36, build-tools 34·36), Gradle 캐시(`GRADLE_USER_HOME`). 사용자 환경변수 JAVA_HOME/ANDROID_HOME/GRADLE_USER_HOME + PATH 등록(기존 JAVA_HOME은 없는 JDK17 폴더를 가리켜 교체). `npx cap add android` + `assembleDebug` 성공(app-debug.apk 8.3MB). 새 터미널부터 적용
+- [ ] **Play Console 앱 엔트리 생성** — 🔴 본인인증 대기 중 (아래 입력값 참고)
+- [x] 로컬 Android 환경 구축 (2026-09-30): C: 여유 1.4GB뿐이라 전부 **E:\android**에 설치 — JDK 21(Temurin), SDK(platform 35·36, build-tools 34·36), Gradle 캐시(`GRADLE_USER_HOME`). 사용자 환경변수 JAVA_HOME/ANDROID_HOME/GRADLE_USER_HOME + PATH 등록(기존 JAVA_HOME은 없는 JDK17 폴더를 가리켜 교체). `npx cap add android` + `assembleDebug` 성공(app-debug.apk 8.3MB). 새 터미널부터 적용
   - 패키지 ID `com.appfactory.symptomdiary` (Play 업로드 후 변경 불가)
 - [x] 개인정보처리방침에 연락처(eulhowi@gmail.com) 추가 + 재배포. `deploy_cloudflare.ps1`을 Workers 방식으로 수정(파라미터 `-WorkerName`)
 - [ ] 키스토어 생성(이중 백업 필수) → `build_android.ps1`로 AAB 빌드
@@ -75,9 +93,11 @@
 3. 계정 개설: Play Console $25 / AdMob / Cloudflare / 도메인 (`../_accounts.md`에 체크)
 
 ## 미해결
-- Cloudflare wrangler 브라우저 인증 미완료
-- Play Console 앱 엔트리 아직 미생성
-- AdMob/Cloudflare/도메인 계정 미개설 (Play Console만 완료)
+- 🔴 Play Console 개발자 본인인증 미완료 (사용자 작업) — 상장 전 단계 전부 이것에 막힘
+- 키스토어 미생성 → AAB 미빌드
+- 패키지 ID(`com.appfactory.symptomdiary`) 확정 여부 — 첫 AAB 업로드 후 영구 고정. 바꾸려면 AAB 빌드 전에 `capacitor.config.ts`의 `appId` 수정
+- 광고 사용 여부(Play '광고' 선언에 영향) 미결정 — 시범 빌드는 광고 off
+- AdMob/도메인 계정 미개설 (Cloudflare는 개설·배포 완료)
 
 ## 실행 환경
 - 개발 서버: 앱 폴더에서 `npm run dev` → `http://localhost:5173/`
