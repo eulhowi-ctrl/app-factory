@@ -80,7 +80,8 @@
     "docCertificate": "診断書",
     "docReceipt": "領収書",
     "docDetails": "明細",
-    "docOther": "その他"
+    "docOther": "その他",
+    "title": "記録"
   },
   "timeline": {
     "range": "期間",
@@ -89,7 +90,8 @@
     "d90": "90日",
     "empty": "この期間の記録はありません。",
     "list": "一覧",
-    "heatmap": "ヒートマップ"
+    "heatmap": "ヒートマップ",
+    "title": "タイムライン"
   },
   "export": {
     "title": "医師と共有",

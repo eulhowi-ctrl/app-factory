@@ -80,7 +80,8 @@
     "docCertificate": "诊断证明",
     "docReceipt": "收据",
     "docDetails": "明细",
-    "docOther": "其他"
+    "docOther": "其他",
+    "title": "记录"
   },
   "timeline": {
     "range": "范围",
@@ -89,7 +90,8 @@
     "d90": "90天",
     "empty": "此期间没有记录。",
     "list": "列表",
-    "heatmap": "热力图"
+    "heatmap": "热力图",
+    "title": "时间线"
   },
   "export": {
     "title": "与医生分享",

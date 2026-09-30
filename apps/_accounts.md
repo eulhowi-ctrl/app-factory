@@ -10,10 +10,10 @@
 | AdMob | ☐ | | 광고 수익. 첫날 개설 권장 |
 | Cloudflare (Workers 정적 자산) | ☑ | 2026-08-14 이전 | eulhowi@gmail.com. symptomly → https://symptomly.symptomly.workers.dev |
 | 도메인 | ☐ | | ~$11/년, 커스텀 도메인 |
-| upload.keystore | ☐ | | **분실 시 업데이트 불가** — 클라우드+USB 이중 백업 |
+| upload.keystore (symptomly) | ☑ 로컬 2곳 / ☐ 클라우드·USB | 2026-10-01 | **분실 시 업데이트 불가** — 클라우드+USB 별도 백업 필요 |
 | GitHub (선택) | ☐ | | 버전 관리 |
 
 ## 백업 위치 2곳 (필수)
-- upload.keystore 백업 1:
-- upload.keystore 백업 2:
-- keystore.properties 복사본:
+- upload.keystore 원본: E:/app-factory-keys/symptomly/ (비밀번호는 같은 폴더의 keystore.properties)
+- upload.keystore 백업 1: C:/Users/wieul/app-factory-keys-backup/symptomly/ (같은 PC — 진짜 백업 아님)
+- 백업 2 (클라우드/USB): **미완료 — 사용자 작업**

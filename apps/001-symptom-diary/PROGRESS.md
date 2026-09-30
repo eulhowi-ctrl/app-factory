@@ -5,8 +5,9 @@
 ## 현재 단계
 스테이지 3(검수) 통과 → **스테이지 4(상장) 진행 중, 지금은 🔴 차단됨**.
 **차단 사유: Play Console 개발자(개인) 본인인증 미완료** → 인증이 끝나야 '앱 만들기'부터 진행 가능. (2026-09-30 사용자 확인)
-다음 세션 첫 할 일: ① 사용자가 본인인증 완료 여부 알려줌 → ② 아래 "Play Console 앱 엔트리 입력값"으로 앱 생성 → ③ 키스토어·AAB.
-인증 대기 중에도 가능한 일(차단 안 받음): 키스토어 생성·백업, AAB 빌드, 스크린샷·피처 그래픽 제작, 클로즈드 테스트 모집 글 준비.
+**AAB 빌드·서명 완료(2026-10-01)** — 업로드할 파일은 준비됨. 남은 것은 본인인증 → 앱 엔트리 → 내부/클로즈드 테스트 업로드.
+다음 세션 첫 할 일: ① 사용자가 본인인증 완료 여부 알려줌 → ② 아래 "Play Console 앱 엔트리 입력값"으로 앱 생성 → ③ AAB 업로드(내부 테스트).
+인증 대기 중에도 가능한 일(차단 안 받음): 아이콘 512 PNG·피처 그래픽 1024x500 제작, 클로즈드 테스트 모집 글 준비.
 
 ## 2026-09-30 세션 요약 (Cloudflare 배포 + Android 환경 + 상장 준비)
 - Cloudflare: wrangler 로그인(eulhowi@gmail.com) → 기존 Worker `symptomly`(8/14 옛 빌드, 같은 앱) 확인 후 최신 빌드로 갱신. 웹 https://symptomly.symptomly.workers.dev
@@ -15,6 +16,11 @@
 - Android: JDK21·SDK·Gradle을 E:\android에 설치(C: 여유 1.4GB), 환경변수 등록, `cap add android`, `assembleDebug` 성공(8.3MB)
 - 커밋 `bde3742` 푸시 완료 (GitHub eulhowi-ctrl/app-factory, main)
 - 결과: Play Console 앱 만들기 단계에서 **개발자 본인인증 미완료로 중단** → 다음 세션에서 재개
+
+## 2026-10-01 세션 요약 (AAB 빌드 + 버그 3건)
+- **앱 버그 수정**: `log.title`·`timeline.title` 번역 키가 16개 언어 전부에 없어 화면 제목이 키 이름 그대로 노출됨 → 각 언어의 tabs 번역을 재사용해 추가, 웹 재배포. 스크린샷 촬영 중 발견. 6개 탭 텍스트 전수 검사로 키 노출 0건 확인
+- **공장 스크립트 버그 2건**: ① `version_bump.ps1`의 `Set-Content -Encoding UTF8`(PS5)이 BOM을 붙여 Gradle 실패 → BOM 없는 저장으로 수정 ② `smoke_check.ps1`은 BOM 없는 한글 때문에 PS5에서 파싱 오류로 **아예 실행되지 않던 상태** → scripts/*.ps1 전체에 BOM 추가. 이전에 기록된 '스모크 통과'는 이 스크립트로 검증된 것이 아님에 유의
+- 스크린샷 예시 데이터 주의: 복약 순응도가 낮게 나와 스토어용으로 부적절해 지난 7일 복용 기록을 넣어 재촬영
 
 ## Play Console 앱 엔트리 입력값 (인증 완료 후 그대로 사용)
 - 앱 이름 `Symptomly` / 기본 언어 English (United States) / **앱** / **무료**(유료 전환 불가) / 정책·수출법 선언 체크
@@ -78,7 +84,12 @@
 - [x] 로컬 Android 환경 구축 (2026-09-30): C: 여유 1.4GB뿐이라 전부 **E:\android**에 설치 — JDK 21(Temurin), SDK(platform 35·36, build-tools 34·36), Gradle 캐시(`GRADLE_USER_HOME`). 사용자 환경변수 JAVA_HOME/ANDROID_HOME/GRADLE_USER_HOME + PATH 등록(기존 JAVA_HOME은 없는 JDK17 폴더를 가리켜 교체). `npx cap add android` + `assembleDebug` 성공(app-debug.apk 8.3MB). 새 터미널부터 적용
   - 패키지 ID `com.appfactory.symptomdiary` (Play 업로드 후 변경 불가)
 - [x] 개인정보처리방침에 연락처(eulhowi@gmail.com) 추가 + 재배포. `deploy_cloudflare.ps1`을 Workers 방식으로 수정(파라미터 `-WorkerName`)
-- [ ] 키스토어 생성(이중 백업 필수) → `build_android.ps1`로 AAB 빌드
+- [x] 키스토어 생성 + AAB 빌드 (2026-10-01). 패키지 ID `com.appfactory.symptomdiary` **그대로 쓰기로 확정**(사용자 결정)
+  - AAB: `android/app/build/outputs/bundle/release/app-release.aab` (6.8MB, versionCode 100 / 0.1.0). git 제외 산출물이라 필요하면 `build_android.ps1`로 재생성
+  - 서명 검증: AAB 인증서 SHA-256 = 업로드 키 지문(AD:11:7E:E8:...:A2:0C), jarsigner verified
+  - 스모크 `smoke_check.ps1` 7/7 PASS (서명 여부는 스모크가 검사하지 않아 위에서 별도 확인)
+  - 키스토어: 저장소 밖 E:/app-factory-keys/symptomly/ + 백업 C:/Users/wieul/app-factory-keys-backup/symptomly/ (둘 다 로컬). **클라우드/USB 별도 백업은 사용자 작업**
+- [x] 스토어 스크린샷 6장(1080x2160) 보관: `store/screenshots/` (예시 데이터, 영어 UI). 아이콘 512 PNG·피처 그래픽은 미제작
 - [ ] 클로즈드 테스트 12명×14일 (opt-in 링크는 AAB를 트랙에 업로드해야 생성됨)
 - [ ] AdMob·도메인 (선택)
 
@@ -94,8 +105,8 @@
 
 ## 미해결
 - 🔴 Play Console 개발자 본인인증 미완료 (사용자 작업) — 상장 전 단계 전부 이것에 막힘
-- 키스토어 미생성 → AAB 미빌드
-- 패키지 ID(`com.appfactory.symptomdiary`) 확정 여부 — 첫 AAB 업로드 후 영구 고정. 바꾸려면 AAB 빌드 전에 `capacitor.config.ts`의 `appId` 수정
+- 키스토어를 클라우드/USB에 별도 백업하지 않음 (현재 로컬 2곳뿐) — 사용자 작업
+- 아이콘 512x512 PNG, 피처 그래픽 1024x500 미제작 / 클로즈드 테스트 테스터 12명 미모집
 - 광고 사용 여부(Play '광고' 선언에 영향) 미결정 — 시범 빌드는 광고 off
 - AdMob/도메인 계정 미개설 (Cloudflare는 개설·배포 완료)
 

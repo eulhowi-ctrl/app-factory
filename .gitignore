@@ -15,3 +15,7 @@
 *.local
 .env
 .DS_Store
+
+# Claude 운영 파일 (로컬 전용, GitHub 제외)
+/CLAUDE.md
+/STATUS.md

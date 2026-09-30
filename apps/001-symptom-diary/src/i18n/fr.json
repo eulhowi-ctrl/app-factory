@@ -80,7 +80,8 @@
     "docCertificate": "Certificat",
     "docReceipt": "Reçu",
     "docDetails": "Détails",
-    "docOther": "Autre"
+    "docOther": "Autre",
+    "title": "Journal"
   },
   "timeline": {
     "range": "Période",
@@ -89,7 +90,8 @@
     "d90": "90 jours",
     "empty": "Aucune entrée sur cette période.",
     "list": "Liste",
-    "heatmap": "Carte de chaleur"
+    "heatmap": "Carte de chaleur",
+    "title": "Chronologie"
   },
   "export": {
     "title": "Partager avec votre médecin",

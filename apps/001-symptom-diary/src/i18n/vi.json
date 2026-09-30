@@ -80,7 +80,8 @@
     "docCertificate": "Giấy chứng nhận",
     "docReceipt": "Hóa đơn",
     "docDetails": "Chi tiết",
-    "docOther": "Khác"
+    "docOther": "Khác",
+    "title": "Ghi chép"
   },
   "timeline": {
     "range": "Khoảng",
@@ -89,7 +90,8 @@
     "d90": "90 ngày",
     "empty": "Không có ghi chép trong khoảng này.",
     "list": "Danh sách",
-    "heatmap": "Bản đồ nhiệt"
+    "heatmap": "Bản đồ nhiệt",
+    "title": "Dòng thời gian"
   },
   "export": {
     "title": "Chia sẻ với bác sĩ",

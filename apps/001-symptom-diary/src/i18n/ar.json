@@ -80,7 +80,8 @@
     "docCertificate": "شهادة",
     "docReceipt": "إيصال",
     "docDetails": "تفاصيل",
-    "docOther": "أخرى"
+    "docOther": "أخرى",
+    "title": "تسجيل"
   },
   "timeline": {
     "range": "النطاق",
@@ -89,7 +90,8 @@
     "d90": "90 يومًا",
     "empty": "لا توجد سجلات في هذه الفترة.",
     "list": "قائمة",
-    "heatmap": "خريطة حرارية"
+    "heatmap": "خريطة حرارية",
+    "title": "الخط الزمني"
   },
   "export": {
     "title": "المشاركة مع طبيبك",

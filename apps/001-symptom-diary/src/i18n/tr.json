@@ -80,7 +80,8 @@
     "docCertificate": "Belge",
     "docReceipt": "Makbuz",
     "docDetails": "Detay",
-    "docOther": "Diğer"
+    "docOther": "Diğer",
+    "title": "Kaydet"
   },
   "timeline": {
     "range": "Aralık",
@@ -89,7 +90,8 @@
     "d90": "90 gün",
     "empty": "Bu dönemde kayıt yok.",
     "list": "Liste",
-    "heatmap": "Isı haritası"
+    "heatmap": "Isı haritası",
+    "title": "Zaman Çizelgesi"
   },
   "export": {
     "title": "Doktorunuzla paylaşın",

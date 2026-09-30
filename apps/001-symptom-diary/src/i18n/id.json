@@ -80,7 +80,8 @@
     "docCertificate": "Sertifikat",
     "docReceipt": "Struk",
     "docDetails": "Rincian",
-    "docOther": "Lainnya"
+    "docOther": "Lainnya",
+    "title": "Catat"
   },
   "timeline": {
     "range": "Rentang",
@@ -89,7 +90,8 @@
     "d90": "90 hari",
     "empty": "Tidak ada catatan dalam periode ini.",
     "list": "Daftar",
-    "heatmap": "Peta panas"
+    "heatmap": "Peta panas",
+    "title": "Linimasa"
   },
   "export": {
     "title": "Bagikan dengan dokter Anda",

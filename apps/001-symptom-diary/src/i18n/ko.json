@@ -80,7 +80,8 @@
     "docCertificate": "진단서",
     "docReceipt": "영수증",
     "docDetails": "세부내역",
-    "docOther": "기타"
+    "docOther": "기타",
+    "title": "기록"
   },
   "timeline": {
     "range": "기간",
@@ -89,7 +90,8 @@
     "d90": "90일",
     "empty": "이 기간에 기록이 없습니다.",
     "list": "목록",
-    "heatmap": "히트맵"
+    "heatmap": "히트맵",
+    "title": "타임라인"
   },
   "export": {
     "title": "의사와 공유",

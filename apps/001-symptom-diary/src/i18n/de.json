@@ -80,7 +80,8 @@
     "docCertificate": "Zeugnis",
     "docReceipt": "Quittung",
     "docDetails": "Details",
-    "docOther": "Sonstiges"
+    "docOther": "Sonstiges",
+    "title": "Erfassen"
   },
   "timeline": {
     "range": "Zeitraum",
@@ -89,7 +90,8 @@
     "d90": "90 Tage",
     "empty": "In diesem Zeitraum gibt es keine Einträge.",
     "list": "Liste",
-    "heatmap": "Heatmap"
+    "heatmap": "Heatmap",
+    "title": "Verlauf"
   },
   "export": {
     "title": "Mit deinem Arzt teilen",

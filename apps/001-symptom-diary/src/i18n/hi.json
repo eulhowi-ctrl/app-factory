@@ -80,7 +80,8 @@
     "docCertificate": "प्रमाणपत्र",
     "docReceipt": "रसीद",
     "docDetails": "विवरण",
-    "docOther": "अन्य"
+    "docOther": "अन्य",
+    "title": "लॉग"
   },
   "timeline": {
     "range": "सीमा",
@@ -89,7 +90,8 @@
     "d90": "90 दिन",
     "empty": "इस अवधि में कोई प्रविष्टि नहीं।",
     "list": "सूची",
-    "heatmap": "हीटमैप"
+    "heatmap": "हीटमैप",
+    "title": "टाइमलाइन"
   },
   "export": {
     "title": "अपने डॉक्टर से साझा करें",
