@@ -11,7 +11,7 @@
 
 ## 1. 웹 배포 (가장 빠름)
 1. [ ] `npx wrangler login` — 브라우저 로그인 (인터랙티브)
-2. [ ] `../../scripts/deploy_cloudflare.ps1 -AppDir <앱경로> -ProjectName symptomly`
+2. [ ] `../../scripts/deploy_cloudflare.ps1 -AppDir <앱경로> -WorkerName symptomly`
 3. [ ] `https://symptomly.pages.dev` 접속 확인
 4. [ ] (선택) 커스텀 도메인 연결 — Cloudflare 대시보드 → Pages
 

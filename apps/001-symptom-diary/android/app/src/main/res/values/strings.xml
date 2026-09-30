@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Symptomly</string>
+    <string name="title_activity_main">Symptomly</string>
+    <string name="package_name">com.appfactory.symptomdiary</string>
+    <string name="custom_url_scheme">com.appfactory.symptomdiary</string>
+</resources>

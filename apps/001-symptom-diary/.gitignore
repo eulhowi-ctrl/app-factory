@@ -9,3 +9,6 @@ android/app/build/
 android/build/
 *.keystore
 keystore.properties
+
+# wrangler
+.wrangler

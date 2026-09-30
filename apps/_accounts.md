@@ -8,7 +8,7 @@
 |---|---|---|---|
 | Google Play Console ($25 1회) | ☑ | 2026-09-30 이전 | apps의 앱 등록에 필요 |
 | AdMob | ☐ | | 광고 수익. 첫날 개설 권장 |
-| Cloudflare Pages | ☐ | | 웹 배포 (무료, 무제한 대역폭) |
+| Cloudflare (Workers 정적 자산) | ☑ | 2026-08-14 이전 | eulhowi@gmail.com. symptomly → https://symptomly.symptomly.workers.dev |
 | 도메인 | ☐ | | ~$11/년, 커스텀 도메인 |
 | upload.keystore | ☐ | | **분실 시 업데이트 불가** — 클라우드+USB 이중 백업 |
 | GitHub (선택) | ☐ | | 버전 관리 |

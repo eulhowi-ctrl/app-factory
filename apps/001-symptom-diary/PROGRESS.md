@@ -52,9 +52,15 @@
 - [x] `docs/PUBLISH_CHECKLIST.md` 작성, `docs/PLAY_LISTING.md`·`blog-intro.md` 준비
 - [x] Play Console 계정 개설 + $25 결제 (2026-09-30 이전, 사용자 확인)
 - [x] 웹 빌드 성공 확인 (2026-09-30, 로컬)
-- [ ] Cloudflare wrangler login (브라우저 인증) → 웹 배포 → privacy.html URL 확보 ← **다음 세션 시작점**
-- [ ] Play Console 앱 엔트리 생성
-- [ ] JDK PATH 등록 + Android SDK 설치 → `npx cap add android` → 키스토어 생성(이중 백업 필수) → AAB 빌드
+- [x] Cloudflare wrangler login + 웹 배포 완료 (2026-09-30). 기존 Worker `symptomly`(8/14 옛 빌드)를 `wrangler deploy`로 갱신. 라이브 JS 해시 = 로컬 빌드 일치 확인
+  - 웹: https://symptomly.symptomly.workers.dev
+  - **개인정보처리방침 URL(Play용): https://symptomly.symptomly.workers.dev/privacy.html** (→ /privacy 로 리다이렉트 후 200)
+  - 배포 방식은 Pages가 아니라 Workers(`wrangler.jsonc`). `deploy_cloudflare.ps1`(Pages)은 이 앱에 안 맞음 — `wrangler pages deploy`가 프로젝트 파일을 자동 수정하니 쓰지 말 것. 재배포: `npm run build && npx wrangler deploy`
+- [ ] **다음 세션 시작점: Play Console 앱 엔트리 생성**
+- [x] 로컬 Android 환경 구축 (2026-09-30): C: 여유 1.4GB뿐이라 전부 **E:ndroid**에 설치 — JDK 21(Temurin), SDK(platform 35·36, build-tools 34·36), Gradle 캐시(`GRADLE_USER_HOME`). 사용자 환경변수 JAVA_HOME/ANDROID_HOME/GRADLE_USER_HOME + PATH 등록(기존 JAVA_HOME은 없는 JDK17 폴더를 가리켜 교체). `npx cap add android` + `assembleDebug` 성공(app-debug.apk 8.3MB). 새 터미널부터 적용
+  - 패키지 ID `com.appfactory.symptomdiary` (Play 업로드 후 변경 불가)
+- [x] 개인정보처리방침에 연락처(eulhowi@gmail.com) 추가 + 재배포. `deploy_cloudflare.ps1`을 Workers 방식으로 수정(파라미터 `-WorkerName`)
+- [ ] 키스토어 생성(이중 백업 필수) → `build_android.ps1`로 AAB 빌드
 - [ ] 클로즈드 테스트 12명×14일 (opt-in 링크는 AAB를 트랙에 업로드해야 생성됨)
 - [ ] AdMob·도메인 (선택)
 
@@ -70,7 +76,6 @@
 
 ## 미해결
 - Cloudflare wrangler 브라우저 인증 미완료
-- 안드로이드 빌드 도구 로컬 미설치 (JDK는 설치돼있으나 PATH 미등록, Android SDK 없음)
 - Play Console 앱 엔트리 아직 미생성
 - AdMob/Cloudflare/도메인 계정 미개설 (Play Console만 완료)
 
